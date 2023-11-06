@@ -12,14 +12,13 @@ public class TestAwsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TestAwsApplication.class, args);
 	}
-	
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 	    return new WebMvcConfigurer() {
 	        @Override
 	        public void addCorsMappings(CorsRegistry registry) {
 	            registry.addMapping("/**")
-	                    .allowedOrigins("*") // Allow requests from any origin
+	                    .allowedOrigins("http://128.226.29.123") // Specify the allowed origin
 	                    .allowedMethods("GET", "POST", "PUT", "DELETE")
 	                    .allowedHeaders("*")
 	                    .allowCredentials(true)
